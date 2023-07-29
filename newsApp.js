@@ -3,7 +3,7 @@ NEWS API FETCHES NEWS WHICH ARE MONTH OLD (THIS VERSION WHICH WE ARE USING I.E F
 NEWS API ALLOWS TO HANDLE 100 REQUEST PER DAY(FREE VERSION)
 */
 const url = "https://newsapi.org/v2/everything?q=";
-const API_KEY ="80da95cc57244482985cac4bebae34ff";
+const API_KEY ="827afe359cd94e8fae1b708a014aec8a";
 // const cardsContainer = document.querySelector(".container");
 //as soon as the window loads the fetch news function must be called
 window.addEventListener("load",() => fetchNews("sports"));
