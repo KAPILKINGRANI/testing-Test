@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* accent colors are supplementary colors */
+:root {
+    --primary-text-color:#183b56;
+    --secondary-text-color:#577592;
+    --accent-color:#2294ed;
+    --accent-color-dark:#1d69a3;
+}
+body {
+    font-family: "Poppins","sans-serif";
+    background-color: #FDE2FF;
+}
+.card {
+    margin: 1rem;
+   
+}
+.container{
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+.navbar-main{
+    background-color: #183b56;
+    width:90%;
+    margin:0 auto;
+}

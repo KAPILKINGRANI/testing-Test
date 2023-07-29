@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <title>Newsify</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- BOOTSTRAP LINK -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- FONT AWESOME LINK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- WOW JS LINK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light  data-bs-target">
+        <div class="container-fluid">
+            <nav class="navbar navbar-main bg-body-tertiary">
+                <div class="container-fluid ">
+                    <a class="navbar-brand" href="#">
+                        <img src="newspaper-solid.svg" alt="Logo" width="30" height="24"
+                            class="d-inline-block align-text-top">
+                        Newsify
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" id="sports" aria-current="page" href="#">SPORTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="technology" aria-current="page" href="#">TECHNOLOGY</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="finance" aria-current="page" href="#">FINANCE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="stockMarket" aria-current="page" href="#">STOCK MARKET</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="politics" aria-current="page" href="#">POLITICS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="entertainment" aria-current="page" href="#">ENTERTAINMENT</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="d-flex" role="search" autocomplete="off">
+                        <input class="form-control me-2" id="searchField" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button>
+                    </form>
+            </nav>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- <div class="card invisible newsTemplateDiv wow animate__bounceIn" style="width: 20rem; height:min-content;">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title">News Title</h4>
+                <h5 class="card-subtitle">Source</h5>
+                <p class="card-text">News Description</p>
+                <a href="" class="btn btn-primary">Read More</a>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- WOW JS LINKS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        wow = new WOW(
+            {
+                animateClass: 'animate__animated', // default
+            }
+        )
+        wow.init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">
+        wow = new WOW(
+            {
+                boxClass: 'wow',      // default
+                animateClass: 'animate__animated', // default
+                offset: 0,          // default
+                mobile: true,       // default
+                live: true        // default
+            }
+        )
+        wow.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="newsApp.js"></script>
+</body>
+
+</html>
