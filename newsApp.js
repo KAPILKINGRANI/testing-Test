@@ -2,8 +2,10 @@
 NEWS API FETCHES NEWS WHICH ARE MONTH OLD (THIS VERSION WHICH WE ARE USING I.E FREE VERSION)
 NEWS API ALLOWS TO HANDLE 100 REQUEST PER DAY(FREE VERSION)
 */
-const url = "https://newsapi.org/v2/everything?q=";
-const API_KEY ="827afe359cd94e8fae1b708a014aec8a";
+//news catcher ka description ki sirf 30 days allow fir api key change
+//news catcher mai monthly 50 calls hi allowed hai toh api change
+//free version api mai problems hai news api local host pe chal sakti
+const url = "https://api.newscatcherapi.com/v2/search?q="
 // const cardsContainer = document.querySelector(".container");
 //as soon as the window loads the fetch news function must be called
 window.addEventListener("load",() => fetchNews("sports"));
@@ -13,10 +15,15 @@ async function fetchNews(query) {
     //the format in fetch is written as per newsAPI website docs
     //fetch returns promise therfore we are using await so that until result 
     //is not fetched no further action should occured
-    const result = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    const result = await fetch(`${url}${query}`,{
+        headers:{
+            'x-api-key': 'bWLQ5eZDXXqEWKORIjLbZFBXB9lNSgsPWH9GBw1N29c'
+        } 
+    });
     const data =   await result.json();
+    console.log(data);
     try {
-        if(data.totalResults!=0) {
+        if(data.total_pages!=0) {
             bindData(data.articles);
         }
         else {
@@ -29,7 +36,6 @@ async function fetchNews(query) {
     // console.log(data);
     //bind the data in our cards
     // console.log(data.articles);
-    console.log("hello");
     // if(data.totalResults===0) {
     //     alert("hello");
     //    const div = document.createElement("div");
@@ -55,7 +61,7 @@ function bindData(articles) {
     cardsContainer.innerHTML = "";
 
     articles.forEach((article) => {
-        if(!article.urlToImage) {
+        if(!article.media) {
             return;
         }
         else {
@@ -65,9 +71,8 @@ function bindData(articles) {
             <img src="" class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-title">News Title</h4>
-                <h5 class="card-subtitle">Source</h5>
                 <p class="card-text">News Description</p>
-                <a href="" class="btn btn-primary">Read More</a>
+                <a href=""target=_blank class="btn btn-primary">Read More</a>
             </div>`
             // const cardClone = template.cloneNode(true);
             // console.log(cardClone);
@@ -83,17 +88,17 @@ function bindData(articles) {
 function fillDataInCard(cardClone,article) {
     const newsImg = cardClone.querySelector(".card-img-top");
     const newsTitle = cardClone.querySelector(".card-title");
-    const newsSource = cardClone.querySelector(".card-subtitle");
+    const readMore = cardClone.querySelector(".btn");
     const newsDescription = cardClone.querySelector(".card-text");
     
-    const date = new Date(article.publishedAt).toDateString()
-    newsImg.src = article.urlToImage;
-    newsTitle.innerHTML = article.title;
-    newsSource.innerHTML =""+article.source.name+"| "+date;
-    newsDescription.innerHTML = article.description;
+    const date = new Date(article.published_date).toDateString()
+    newsImg.src = article.media;
+    newsTitle.innerHTML = article.title+"|"+date;
+    readMore.href = article.link;
+    newsDescription.innerHTML = article.summary;
 
     cardClone.addEventListener("click", () => {
-        window.open(article.url,"_blank");
+        window.open(article.link,"_blank");
     })
 
 }
